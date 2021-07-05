@@ -1,0 +1,39 @@
+<%- contentFor('container') %>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Pinjam Barang</h1>
+    <a href="/pinjam/tambah" class="btn btn-primary btn-sm">
+        <i class="fa fa-plus"></i> Tambah
+    </a>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr class="text-center">
+                    <th scope="col">Nama</th>
+                    <th scope="col">Barang</th>
+                    <th scope="col">Jumlah Barang</th>
+                    <th>Tanggal Pinjam</th>
+                    <th scope="col">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% pinjam.forEach(pjm => { %>
+                <tr class="text-center">
+                    <td><%= pjm.nama_pinjam %></td>
+                    <td><%= pjm.barang_pinjam %></td>
+                    <td><%= pjm.jumlah %></td>
+                    <td><%= pjm.waktu %></td>
+                    <td>
+                        <form action="/pinjam/kembalikan/<%= pjm.id %>?_method=PUT" method="post" autocomplete="off">
+                            <input type="hidden" name="nama_barang" value="<%= pjm.barang_pinjam %>">
+                            <input type="hidden" name="jumlah" value="<%= pjm.jumlah %>">
+                            <button type="submit" class="btn btn-warning btn-sm">Kembalikan</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</div>

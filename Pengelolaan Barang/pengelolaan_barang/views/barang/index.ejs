@@ -1,0 +1,57 @@
+<%- contentFor('container') %>
+<h1 class="h3">Barang</h1>
+<% if (msg.length > 0) { %>
+<div class="alert alert-success">
+    <%= msg %>
+</div>
+<% } %>
+<% if (gagal.length > 0) { %>
+<div class="alert alert-danger">
+    <%= gagal %>
+</div>
+<% } %>
+<div class="row mt-3">
+    <div class="col-12">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr class="text-center">
+                    <th scope="col">#</th>
+                    <th scope="col">Nama Barang</th>
+                    <th scope="col">Jumlah Barang</th>
+                    <th>Status</th>
+                    <th scope="col">Aksi</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (barang.length >= 1) { %>
+                <% let no = 1; barang.forEach(brg => { %>
+                <tr class="text-center">
+                    <th><%= no++ %> </th>
+                    <td><%= brg.nama_barang %> </td>
+                    <td><%= brg.jumlah_barang %></td>
+                    <td>
+                        <% if (brg.status == 'ada') { %>
+                        <div class="badge badge-success">
+                            <%= brg.status %>
+                        </div>
+                        <% } else { %>
+                        <div class="badge badge-primary">
+                            <%= brg.status %>
+                        </div>
+                        <% } %>
+                    </td>
+                    <td>
+                        <a href="barang/<%= brg.id %>" class="btn btn-sm btn-warning text-white"><i
+                                class="fas fa-edit"></i></a>
+                        <form action="/barang/<%= brg.id %>?_method=DELETE" method="post" class="d-inline">
+                            <button type="submit" class="btn btn-sm btn-danger text-white"><i
+                                    class="fa fa-trash"></i></button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>

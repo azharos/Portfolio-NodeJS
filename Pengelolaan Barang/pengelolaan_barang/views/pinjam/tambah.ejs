@@ -1,0 +1,39 @@
+<%- contentFor('container') %>
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow">
+            <h5 class="card-header bg-primary text-white">Tambah Pinjam Barang</h5>
+            <div class="card-body">
+                <form action="/pinjam" method="post" autocomplete="off">
+                    <div class="form-group">
+                        <label for="nama">Nama Peminjam</label>
+                        <input type="text" class="form-control" id="nama" name="nama" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="barang">Barang yang dipinjam</label>
+                        <select class="custom-select" name="barang">
+                            <option selected>--Pilih--</option>
+                            <% barang.forEach(brg => { %>
+                            <option value="<%= brg.nama_barang %>"><%= brg.nama_barang %></option>
+                            <% }) %>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jumlah">Jumlah</label>
+                        <input type="number" class="form-control" id="jumlah" name="jumlah" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="keperluan">Keperluan</label>
+                        <input type="text" class="form-control" id="keperluan" name="keperluan" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tanggal">Tanggal</label>
+                        <input class="form-control" type="text" id="tanggal" name="tanggal" readonly
+                            value="<%= day %> ">
+                    </div>
+                    <button type="submit" class="btn btn-success">Pinjam</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<%- contentFor('container') %>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card shadow">
+            <h5 class="card-header bg-primary text-white">Edit Barang</h5>
+            <div class="card-body">
+                <form action="/barang?_method=PUT" method="post" autocomplete="off">
+                    <input type="hidden" name="id" value="<%= brg.id %>">
+                    <div class="form-group">
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" value="<%= brg.nama_barang %>"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="jumlah">Jumlah Barang</label>
+                        <input type="number" class="form-control" id="jumlah" name="jumlah"
+                            value="<%= brg.jumlah_barang %>" required>
+                    </div>
+                    <button type="submit" class="btn btn-success">Update</button>
+                    <a href="/barang" class="btn btn-secondary">Kembali</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

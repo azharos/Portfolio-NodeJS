@@ -1,0 +1,62 @@
+<%- contentFor('content') %>
+<section class="w-100 text-white text-center pt-4 pb-4 pl-2 pr-2" style="background-color: #053742;">
+    <h1 class="display-4 font-weight-bold">Aplikasi Pengelolaan Barang</h1>
+    <h3>RT 06 RW 04 Kel. Muktiharjo Kidul Kec. Pedurungan</h3>
+    <h3>Kota Semarang</h3>
+</section>
+<section class="w-100 pt-5 pb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mt-3">
+                <h3>Deskripsi</h3>
+                <hr>
+                <p class="text-justify">
+                    Aplikasi ini hasil dari Program Kerja KKN Back to Village III yang diselenggarakan oleh Universitas
+                    Semarang
+                </p>
+                <p class="text-justify">
+                    Fungsi dari Aplikasi ini agar Pengelolaan Barang yang terdapat di lingkungan RT 06 RW 04 Kel.
+                    Muktiharjo Kidul Kec. Pedurungan Kota Semarang dapat dikelola dengan baik.
+                </p>
+                <p class="text-justify">
+                    Aplikasi yang sudah terhubung oleh sistem, tentunya membuat sistem memiliki standar kualitas yang
+                    bisa dipertahankan secara berkelanjutan.
+                </p>
+                <p>
+                    Terimakasih untuk Warga RT 06 dan Universitas Semarang
+                </p>
+            </div>
+            <div class="col-md-7 mt-3">
+                <div class="card shadow">
+                    <div class="card-header pt-5 pb-5 text-center bg-dark text-white">
+                        <h2>Sign In</h2>
+                    </div>
+                    <div class="card-body">
+                        <form action="/login" method="post" autocomplete="off">
+                            <div class="form-group">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control" id="username" placeholder="Masukkan Username..."
+                                    name="username">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control" id="password"
+                                    placeholder="Masukkan Password..." name="password">
+                            </div>
+                            <button type="submit" class="w-100 btn btn-primary">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="w-100 mt-3 bg-dark pt-3 pb-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-white">
+                Dibuat oleh &copy; Azhar Ozhi Saputra
+            </div>
+        </div>
+    </div>
+</footer>
