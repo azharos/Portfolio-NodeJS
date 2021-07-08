@@ -12,7 +12,3 @@ Aplikasi ini hasil dari Program Kerja KKN Back to Village III yang diselenggarak
 3. Login Logout
 4. Responsive
 5. Template Admin LTE
-
-#### Akses Login Admin
-User : admin <br>
-Pass : admin
